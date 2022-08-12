@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Signup</title>
+</head>
+<body>
+	<form method="POST" action="/sup">
+		<input name="un" required placeholder="Username">
+		<input name="pw" type="password" required placeholder="password">
+		<input type="submit" value="Submit">
+	</form>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+			{{ message }}
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+</body>
+</html>
